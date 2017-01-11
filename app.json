@@ -1,0 +1,7 @@
+{
+  "name": "Sports Challenge Server",
+  "description": "Simple backend server for sports-challenge app.",
+  "repository": "https://github.com/delsner/sports-challenge-server",
+  "keywords": ["node", "express", "angular", "MEAN", "mongodb", "REST", "API"],
+  "addons": [""]
+}
