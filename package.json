@@ -1,18 +1,18 @@
 {
-  "name": "newsletter-server",
+  "name": "sports-challenge-server",
   "version": "1.0.0",
-  "description": "Server for newsletter",
+  "description": "sports-challenge-server",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/delsner/newsletter-server"
+    "url": "https://github.com/cburing/sports-challenge-server"
   },
   "author": "delsner",
   "license": "MIT",
-  "homepage": "https://github.com/delsner/newsletter-server",
+  "homepage": "https://github.com/cburing/sports-challenge-server",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.0",
