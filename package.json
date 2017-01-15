@@ -1,28 +1,117 @@
 {
-  "name": "sports-challenge-server",
-  "version": "1.0.0",
-  "description": "sports-challenge-server",
-  "main": "server.js",
+  "name": "EmailAppServer",
+  "version": "0.0.1",
+  "main": "index.js",
+  "private": false,
+  "engines": {
+    "node": ">=4.6.x",
+    "npm": ">=2.15.x"
+  },
   "scripts": {
-    "start": "node server.js"
+    "start": "gulp serve",
+    "build": "gulp",
+    "lint": "esw *.js server config --color",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "cross-env NODE_ENV=test babel-node node_modules/isparta/bin/isparta cover node_modules/mocha/bin/_mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register ./server/**/*.test.js",
+    "test:watch": "npm run test -- --watch",
+    "test:check-coverage": "npm run test && istanbul check-coverage",
+    "report-coverage": "coveralls < ./coverage/lcov.info"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cburing/sports-challenge-server"
-  },
-  "author": "delsner",
-  "license": "MIT",
-  "homepage": "https://github.com/cburing/sports-challenge-server",
+  "keywords": [
+    "express",
+    "node",
+    "node.js",
+    "mongodb",
+    "mongoose",
+    "es6",
+    "mocha",
+    "istanbul",
+    "REST",
+    "API",
+    "boilerplate"
+  ],
   "dependencies": {
+    "bcrypt": "0.8.7",
     "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.15.0",
-    "cors": "^2.7.1",
-    "express": "^4.13.4",
-    "express-unless": "^0.3.0",
-    "jwt-simple": "^0.5.0",
-    "mongoose": "^4.4.6",
-    "morgan": "^1.7.0",
-    "passport": "^0.3.2",
-    "passport-jwt": "^2.0.0"
+    "bluebird": "3.4.6",
+    "body-parser": "1.15.2",
+    "compression": "1.6.2",
+    "cookie-parser": "1.4.3",
+    "cors": "2.8.1",
+    "cross-env": "3.1.3",
+    "debug": "^2.2.0",
+    "express": "4.14.0",
+    "express-session": "1.14.2",
+    "express-validation": "1.0.1",
+    "express-winston": "2.0.0",
+    "fuse.js": "2.6.1",
+    "helmet": "3.0.0",
+    "http-status": "^0.2.0",
+    "imap": "^0.8.16",
+    "imap-promise": "1.0.2",
+    "joi": "9.2.0",
+    "jsonwebtoken": "7.1.9",
+    "mailparser": "0.6.1",
+    "method-override": "^2.3.5",
+    "moment": "2.15.2",
+    "mongoose": "4.6.5",
+    "mongoose-paginate": "5.0.3",
+    "morgan": "1.7.0",
+    "natural": "0.4.0",
+    "node-ews": "git://github.com/delsner/node-ews.git",
+    "node-fetch": "1.6.3",
+    "nodemailer": "2.6.4",
+    "oauth": "0.9.14",
+    "passport": "0.3.2",
+    "passport-google-oauth": "1.0.0",
+    "passport-jwt": "2.2.1",
+    "passport-trello": "0.1.5",
+    "pos": "0.4.2",
+    "url": "0.11.0",
+    "winston": "2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.18.0",
+    "babel-core": "6.18.0",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-preset-es2015": "6.16.0",
+    "babel-preset-stage-2": "6.18.0",
+    "chai": "^3.4.1",
+    "commitizen": "^2.8.2",
+    "coveralls": "^2.11.6",
+    "cz-conventional-changelog": "1.2.0",
+    "del": "^2.2.0",
+    "eslint": "3.9.0",
+    "eslint-config-airbnb-base": "7.1.0",
+    "eslint-plugin-import": "1.16.0",
+    "eslint-watch": "2.1.14",
+    "gulp": "3.9.1",
+    "gulp-babel": "6.1.2",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-newer": "^1.1.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "isparta": "4.0.0",
+    "mocha": "3.1.2",
+    "run-sequence": "^1.1.5",
+    "supertest": "2.0.1",
+    "supertest-as-promised": "4.0.2",
+    "validate-commit-msg": "^2.6.1"
+  },
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ]
   }
 }
