@@ -33,9 +33,7 @@ function login(req, res) {
             google: user.google ? true : false,
             exchange: user.exchange ? true : false
           }
-        }, config.jwt.secret, {
-          expiresIn: config.jwt.expiresInSeconds
-        });
+        }, config.jwt.secret);
         res.cookie('email-oauth', token); // TODO: change this to header
         res.status(200).json({
           token
@@ -52,9 +50,7 @@ function oauthCallback(req, res) {
       username: req.user.username,
       email: req.user.email
     }
-  }, config.jwt.secret, {
-    expiresIn: config.jwt.expiresInSeconds
-  });
+  }, config.jwt.secret);
   res.cookie('email-oauth', token); // TODO: change this to header
   res.redirect(config.frontend);
 }

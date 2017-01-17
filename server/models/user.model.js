@@ -7,6 +7,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  team: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Team'
+  },
   email: {
     type: String,
     //unique: true,
@@ -16,8 +20,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  google: mongoose.Schema.Types.Mixed,
-  displayName: String,
+  google: mongoose.Schema.Types.Mixed
   }, {
   timestamps: true
 });
